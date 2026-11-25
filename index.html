@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>时川懿 · 项目介绍</title>
+<meta name="description" content="时川懿，07 年生，女性健康智能硬件创始人。一个人把 AI 硬件从电路、固件、算法做到交付。">
+<style>
+  :root { --ink:#16161a; --soft:#5b5b66; --line:#e7e5e0; --bg:#faf9f6; --card:#fff; --accent:#c2410c; }
+  * { box-sizing:border-box; }
+  body { margin:0; font-family:-apple-system,"PingFang SC","Helvetica Neue",sans-serif; color:var(--ink); background:var(--bg); line-height:1.75; }
+  .wrap { max-width:880px; margin:0 auto; padding:0 22px; }
+  header { padding:88px 0 40px; }
+  header h1 { font-size:44px; line-height:1.15; margin:0 0 14px; letter-spacing:-.5px; }
+  header p.lead { font-size:20px; color:var(--soft); margin:0 0 22px; max-width:680px; }
+  .tags { display:flex; flex-wrap:wrap; gap:8px; }
+  .tag { border:1px solid var(--line); background:#fff; border-radius:999px; padding:4px 12px; font-size:14px; color:var(--soft); }
+  section { padding:28px 0; }
+  h2 { font-size:15px; letter-spacing:.12em; color:var(--accent); margin:0 0 18px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:28px; margin:0 0 22px; }
+  .card h3 { font-size:24px; margin:0 0 4px; }
+  .meta { color:var(--soft); font-size:14px; margin:0 0 14px; }
+  .one { font-size:18px; margin:0 0 14px; }
+  .card ul { margin:0 0 14px; padding-left:20px; }
+  .card li { margin:4px 0; }
+  .card img { width:100%; border-radius:12px; border:1px solid var(--line); margin:6px 0 14px; display:block; }
+  .imgs { display:grid; grid-template-columns:1fr 1fr; gap:12px; }
+  .imgs img { margin:6px 0 14px; height:220px; object-fit:cover; }
+  .links { display:flex; flex-wrap:wrap; gap:10px; }
+  .links a { text-decoration:none; color:var(--ink); border:1px solid var(--ink); border-radius:999px; padding:6px 14px; font-size:14px; }
+  .links a:hover { background:var(--ink); color:#fff; }
+  .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(250px,1fr)); gap:16px; }
+  .mini { background:#fff; border:1px solid var(--line); border-radius:14px; padding:18px; }
+  .mini h4 { margin:0 0 6px; font-size:17px; }
+  .mini p { margin:0 0 10px; color:var(--soft); font-size:15px; }
+  .mini a { color:var(--accent); font-size:14px; text-decoration:none; }
+  .how p { margin:0 0 10px; }
+  footer { color:var(--soft); font-size:14px; padding:40px 0 70px; border-top:1px solid var(--line); margin-top:30px; }
+  @media (max-width:600px) { header { padding-top:56px; } header h1 { font-size:34px; } .imgs { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <h1>时川懿</h1>
+  <p class="lead">07 年生，女性健康智能硬件创始人。我一个人把 AI 硬件从电路、固件、算法做到交付。</p>
+  <div class="tags">
+    <span class="tag">多层 PCB</span><span class="tag">ESP32 嵌入式</span><span class="tag">端侧视觉</span>
+    <span class="tag">七轴机械臂</span><span class="tag">多模态大模型</span><span class="tag">产品与交付</span>
+  </div>
+</header>
+
+<section>
+  <h2>代表项目</h2>
+
+  <div class="card">
+    <h3>盲手 Blinder's Hands</h3>
+    <p class="meta">AdventureX 2026 · 松灵机器人赛道 · 视觉 × 七轴机械臂 × 语音</p>
+    <p class="one">一只会自己找角度的手，替视障者看清药盒上的每一个字。</p>
+    <ul>
+      <li>药盒上的有效期常印在最偏的一面。视障者能用手机读字，却不知道该对准哪一面；盲手补上的是“手”。</li>
+      <li><b>主动视觉闭环：</b>端侧文字检测每一帧评估画面（有没有字、偏了没有、歪了没有、清不清楚），直接驱动腕部微调和下一个视角的选择，可部署在地瓜 RDK 的 BPU 上。</li>
+      <li><b>视觉抓取：</b>深度相机点云分割物体，估计位置、朝向和尺寸，自主规划抓取；ArUco + Kabsch 手眼标定。</li>
+      <li>七种任务：查有效期、读用法、回答“孕妇能不能吃”、整理药箱、一句句引导使用者的手、递到手边；限速、碰撞保护、语音急停。32 个自动化测试。</li>
+    </ul>
+    <div class="links">
+      <a href="https://github.com/BesttyBestty/BlinderHands">代码 · GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>Xavier 智能气味挂件</h3>
+    <p class="meta">已交付 · 浦软创业营 · ESP32-C3 硬件与固件</p>
+    <p class="one">为虚拟角色沈星回做的智能触摸香薰挂件：一摸就释放香气。</p>
+    <div class="imgs">
+      <img src="pendant.jpg" alt="气味挂件外观">
+      <img src="pendant_pcb.jpg" alt="挂件 PCB 顶层">
+    </div>
+    <ul>
+      <li>自己画的 46.7×31 mm 双层 PCB；ESP32-C3 主控、电容触摸、陶瓷片加热、Qi 无线充电。</li>
+      <li>固件从 v1.0 迭代到 v2.0：深度睡眠 → 触摸唤醒 → 加热 → 强制冷却，带消抖和低电量保护。</li>
+      <li>定价 189 元，小红书一条笔记 1,416 个赞，二十多笔预售已交付。</li>
+    </ul>
+    <div class="links">
+      <a href="https://github.com/BesttyBestty/XavierScentPendant">代码与 PCB · GitHub</a>
+      <a href="http://xhslink.com/o/8nIdxbYDwCh">小红书笔记</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>翻个好觉 Flex &amp; Rest</h3>
+    <p class="meta">SheNicest 黑客松 · 蓝盒子命题“做一款能智能调节冷暖的睡眠产品”</p>
+    <p class="one">很多女性在夜里一阵热醒、掀开被子、又冷醒。我想让她睡一整晚。</p>
+    <ul>
+      <li>ESP32-S3 采集皮肤温度趋势和被窝温湿度，建立个人基线，用状态机判断稳定 / 开始变热 / 热负荷高 / 恢复，再决定控温怎么动。</li>
+      <li>活动期间采集真人数据，作品获品牌官方奖项。</li>
+      <li>它后来成了我的公司主线：一块贴在枕头上的软垫，热了帮你凉、冷了帮你暖。</li>
+    </ul>
+    <div class="links">
+      <a href="https://github.com/BesttyBestty/FlexRest">代码与数据 · GitHub</a>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>闻息 · 一款可以闻见记忆的相机</h3>
+    <p class="meta">小红书黑客松 · 队长 · 视觉语义 → 气味</p>
+    <p class="one">定格瞬间，闻见记忆。</p>
+    <ul>
+      <li>Insta360 拍下画面 → AI 智能体读懂场景和情绪，翻译成一份气味配方 → ESP32 通过 UDP 驱动 4 通道雾化，把这一刻“放”出来。</li>
+      <li>我负责智能气味模块：从多通道雾化硬件，到把大模型输出变成硬件能执行的指令。</li>
+    </ul>
+  </div>
+
+  <div class="card">
+    <h3>青梅异物 AI 质检器</h3>
+    <p class="meta">普宁企业走访黑客松 · 单人参赛 · 48 小时</p>
+    <p class="one">给青梅加工线做的 AI 异物初筛：放上去，几秒告诉工人有没有异物。</p>
+    <ul>
+      <li>ESP32-S3-CAM 拍照上传，后端调用视觉大模型判断，结果当场显示在 OLED 和三色指示灯上，电池供电直接放在产线边。</li>
+      <li>工人戴手套没法按按钮，我用灰度帧差做了“进入—停留—离开”检测，青梅放稳就自动拍照。现场跑了 213 条检测记录。</li>
+    </ul>
+  </div>
+</section>
+
+<section>
+  <h2>更多作品</h2>
+  <div class="grid">
+    <div class="mini">
+      <h4>共识终端机</h4>
+      <p>让会议决策真正生效：记录共识与分歧，手机扫码匿名打分，自动算出共识强度并导出行动点。</p>
+      <a href="https://github.com/BesttyBestty/consensus-terminal">GitHub →</a>
+    </div>
+    <div class="mini">
+      <h4>私语</h4>
+      <p>持续的虚拟角色关系网页，36 位真实玩家、2 笔订单。</p>
+      <a href="https://www.sylus.space">打开网站 →</a>
+    </div>
+    <div class="mini">
+      <h4>拼贴剧场</h4>
+      <p>群核 Aholo 3D AI 黑客松：Lux3D 生成 3D 人物，Three.js 做成一张会呼吸的拼贴，钻进窗口就掉进下一部电影。</p>
+    </div>
+  </div>
+  <img src="consensus.jpg" alt="共识终端机主持人屏" style="width:100%;border-radius:12px;border:1px solid var(--line);margin-top:18px">
+</section>
+
+<section class="how">
+  <h2>我怎么做事</h2>
+  <p><b>从需求倒推技术。</b>盲手从“视障者卡在哪一步”出发，控温垫从“她今晚能不能少醒一次”出发。</p>
+  <p><b>先用最便宜的方式验证。</b>青梅质检用几十元的板子加大模型跑通了产线。</p>
+  <p><b>知道什么时候该停。</b>气味挂件卖出去之后，我判断它撑不起规模，主动停掉，把精力放到更需要的问题上。</p>
+  <p><b>安全是设计出来的。</b>控温有功率、时长、累计热量三道上限；机械臂有限速、碰撞保护和急停。</p>
+</section>
+
+<footer>
+  时川懿 · 娲域智能科技 · 通过改变环境，来改变一个人的生活体验<br>
+  GitHub：<a href="https://github.com/BesttyBestty" style="color:inherit">BesttyBestty</a> · B 站：<a href="https://www.bilibili.com/video/BV1mf4m6HEdT" style="color:inherit">DreamingPG</a>
+</footer>
+
+</div>
+</body>
+</html>
